@@ -1,16 +1,15 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import ProductList from './components/ProductList';
-// import Cart from './components/Cart'; 
+import Cart from './components/Cart';
 
 function App() {
   return (
-    <div className="App">
+    <div style={{ fontFamily: 'Arial, sans-serif' }}>
       <Navbar />
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <h1>🛒 Simple Redux Store</h1>
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <ProductList />
-        {/* <Cart /> */}
+        <Cart />
       </div>
     </div>
   );

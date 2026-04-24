@@ -11,11 +11,15 @@ const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       state.items.push(action.payload);
-      state.totalQuantity++;
+      state.totalQuantity += 1;
     },
     removeItem: (state, action) => {
-      state.items = state.items.filter(item => item.id !== action.payload);
-      state.totalQuantity--;
+      // Find the index of the first item with the matching ID
+      const index = state.items.findIndex(item => item.id === action.payload);
+      if (index !== -1) {
+        state.items.splice(index, 1);
+        state.totalQuantity -= 1;
+      }
     },
   },
 });
